@@ -1,0 +1,224 @@
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: var(--bg-primary);
+  width: 100%;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19.2px;
+  z-index: 99;
+}
+.nav__active {
+  position: fixed;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: var(--bg-primary);
+  width: 100%;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19.2px;
+  z-index: 99;
+  box-shadow: 0;
+  transition: box-shadow 0.5s ease-in-out;
+}
+.nav__active {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.nav__wrapper {
+  padding: 0 100px 0 100px;
+  height: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  align-items: center;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.category__section {
+  width: 33.3%;
+}
+.category__section ul {
+  text-align: left;
+  padding: 0;
+}
+.category__section > ul > li {
+  display: inline;
+  padding: 0 10px 0 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.category__section > ul > li > a {
+  text-decoration: none;
+  /* color: var(--text-dark); */
+  text-transform: uppercase;
+}
+.selected {
+  border-bottom: 3px solid var(--light-green);
+  color: var(--light-green);
+  padding: 0 0 20px 0;
+}
+.logo__section {
+  width: 33.3%;
+  text-align: center;
+}
+.logo__section img {
+  min-height: 28.62px;
+  min-width: 31.18px;
+}
+.buttons__section {
+  width: 33%;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+/* CUSTOM SELECT */
+.custom__select {
+  background: var(--bg-primary);
+  width: 50px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  display: inline-block;
+  cursor: pointer;
+}
+.select__disabled {
+  pointer-events: none;
+  cursor: default;
+}
+.ul__select {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: fixed;
+  z-index: 1000;
+  top: 55px;
+  right: 135px;
+  width: 120px;
+  padding: 0;
+  margin: 0;
+  background: var(--bg-primary);
+  -webkit-box-shadow: 0px 15px 34px 0px #9f9f9f;
+  box-shadow: 0px 15px 34px 0px #9f9f9f;
+  list-style-type: none;
+  text-align: center;
+  cursor: pointer;
+}
+.ul__visible {
+  visibility: visible;
+  opacity: 1;
+  cursor: pointer;
+  pointer-events: all;
+}
+.l__select {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28.8px;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.1s ease-in-out;
+}
+.l__selected {
+  background: rgba(0, 0, 0, 0.1);
+}
+.l__select:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.select__el__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-top: 5px;
+}
+.select__el1 {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+/* CUSTOM SELECT */
+.nav__bttns {
+  display: inline-block;
+  min-width: 50px;
+  min-height: 30px;
+}
+.nav__bttns:nth-child(2) button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.bttns__disabled {
+  pointer-events: none;
+}
+.nav__bttns:nth-child(2) > button > img {
+  top: 25%;
+  -ms-transform: translateY(15%);
+  transform: translateY(15%);
+}
+.floating__btn {
+  visibility: hidden;
+  display: flex;
+  position: absolute;
+  z-index: 100;
+  border: 2px solid #000000;
+  color: #fff;
+  background: #000000;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  height: 16px;
+  width: 16px;
+  padding: auto;
+  top: -5px;
+  right: 10px;
+}
+
+.active__btn {
+  visibility: visible;
+}
+.dropdown__wrapper {
+  visibility: hidden;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100vw;
+  height: 100vh;
+  z-index: 101;
+  left: 0;
+  top: 80px;
+}
+.dropdown__wrapper__active {
+  visibility: visible;
+}
+.dropdown__menu {
+  position: absolute;
+  background: rgba(255, 255, 255, 1);
+  z-index: 102;
+  width: 425px;
+  height: 0;
+  right: 40px;
+  visibility: hidden;
+  opacity: 0;
+  overflow: hidden;
+}
+.dropdown__visible {
+  opacity: 1;
+  visibility: visible;
+  height: 477px;
+  transition: height 100ms 100ms, opacity 200ms 0ms;
+  overflow-y: scroll;
+}

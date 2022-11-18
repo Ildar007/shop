@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# React e-commerce website with apollo graphQL api and with [tilework/opus](https://github.com/tilework/opus) builder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Features](#features)
+* [Fixes based on feedback](#fixes-based-on-feedback)
+* [Preview](#preview)
 
-## Available Scripts
+## General info
 
-In the project directory, you can run:
+###### This application fetch data from the GraphQL endpoint and provide an interface to view and interact with this data. 
 
-### `npm start`
+Products can be filtered according to three categories. Products are checked for presence in the warehouse. The application includes a Product Details Page where you can change product photos (if provided from the server). The user has to select the available options for the product and can add it to the cart. Then the product appears in a small cart tab, where you can still change the options of each product. From this tab you can go to the "Cart" route where you can still edit product options, change photos, add quantity, delete, change selected options. The application summarizes the current cost of the cart and adds tax to it.
+The solution had been implemented as per design, which is available at this [link](https://www.figma.com/file/MSyCAqVy1UgNap0pvqH6H3/Junior-Frontend-Test-Designs-Public?node-id=0%3A1).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies
+1. The application was written using React framework
+2. Only class components have been used in the application
+3. Both regular CSS (inline and in seperate files) and CSS-in-JS approach allowers (styled-components) were used in the application
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features 
+- PLP - product listing page
+- PDP - product description page
+- Cart page + Cart overlay (minicart)
 
-### `npm test`
+## Fixes based on feedback
+ - [x] Clicking green cart botton should add product to cart with first pre selected attribute values
+ - [x] Routing not working correctly\
+   `I have followed these instructions: https://github.com/remix-run/react-router/blob/v2.5.2/docs/API.md#link`
+ - [x] Add to cart functionality does not work (redirects and shows white space)\
+    `I am not sure how the functionality of the 'add to cart' button does not work, I checked this functionality and it seems to work fine, also I have fixed issue with white spaces`
+ - [x] Out of stock should be accessible but impossible to buy
+ - [x] Could not find product secondary images\
+    `I am not sure if I understood the objection correctly, but in the endpoint I downloaded some products only have one picture`
+    ![ss of the endpoint](./src/components/assets/product-gallery.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ - [x] Dont fetch every category at once. (Fetch only 1 for current category)
+ - [x] Also same request is sent multiple times
 
-### `npm run build`
+## Preview
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+https://user-images.githubusercontent.com/81425551/193557539-012e5e87-ec35-4b89-9952-62af852cb53a.mp4
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
